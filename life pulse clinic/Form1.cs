@@ -2,9 +2,8 @@ namespace life_pulse_clinic
 {
     public partial class Form1 : Form
     {
-        //private string FileName = "C:\\Users\\hala_\\Desktop\\accountsTable.xlsx";
-        private string FileName = "\\accountsTable.xlsx";
-        // hi my name is haya
+        private string projectPath = AppDomain.CurrentDomain.BaseDirectory.Substring(0, AppDomain.CurrentDomain.BaseDirectory.IndexOf("\\bin"));
+        private string accountsPath = "\\accountsTable.xlsx";
         private Doctor doctor;
         public Form1()
         {
@@ -20,10 +19,8 @@ namespace life_pulse_clinic
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //Excel excel = new Excel(FileName, 1);
-            //MessageBox.Show(excel.ReadCell(0, 2));
-            string path = AppDomain.CurrentDomain.BaseDirectory;
-            MessageBox.Show(path);
+            Excel excel = new Excel(projectPath+accountsPath, 1);
+            MessageBox.Show(excel.ReadCell(0, 1));
         }
     }
 }
