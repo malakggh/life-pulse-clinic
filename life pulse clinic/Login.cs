@@ -5,19 +5,36 @@ namespace life_pulse_clinic
 {
     public partial class Login : Form
     {
-        private Doctor doctor;
-        public Login(ref Doctor doctor)
+        public Login()
         {
             InitializeComponent();
-            this.doctor = doctor;
+       
         }
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            //98fjdifdl
-            this.doctor = new Doctor("malak", "2312");
+            //1.check if username and password exists in excel file
+            //2.if ture
+            //...
+            //3.else
+            //...
+            if (isUsernameAndPassVaild(userTextBox.Text, passTextBox.Text) == true)
+            {
+                Form1.doctor = new Doctor(userTextBox.Text, passTextBox.Text);
+                Close();
+            }
+            else
+            {
+
+            }
 
         }
+
+        private bool isUsernameAndPassVaild(string username,string password)
+        {
+            return true;
+        }
+
 
     }
 }

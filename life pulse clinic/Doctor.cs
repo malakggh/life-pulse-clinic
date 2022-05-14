@@ -15,7 +15,7 @@ namespace life_pulse_clinic
             this.username = username;
             this.password = password;
         }
-        public string Username { get;}
-        public string Password { get; }
+        public string Username(){ return username; }
+        public string Password(){ return password; }
     }
 }
