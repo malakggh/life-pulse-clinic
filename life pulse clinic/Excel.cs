@@ -12,30 +12,26 @@ namespace life_pulse_clinic
     {
         string path = "";
         _Excel.Application excel = new _Excel.Application();
-        Workbook wb;
-        Worksheet ws;
-        public Excel(string path,int Sheet)
+        Workbook workbook;
+        Worksheet worksheet;
+        public Excel(string path,int sheet)
         {
             this.path = path;
-            wb = excel.Workbooks.Open(path);
-            this.ws = (Worksheet?)wb.Worksheets[Sheet];
+            workbook = excel.Workbooks.Open(path);
+            worksheet = workbook.Worksheets[sheet];
         }
-        //public string ReadMyCell(int i , int j)
-        //{
-        //    return ws.Cells[i, j].Value;
-        //}
-        //public string ReadCell(int i,int j)
-        //{
-        //    i++;
-        //    j++;
-        //    if(ws.Cells[i,j] != null)
-        //    {
-        //        return ws.Cells[i, j].ToString();
-        //    }
-        //    else
-        //    {
-        //        return "";
-        //    }
-        //}
+        public string ReadCell(int i, int j)
+        {
+            i++;
+            j++;
+            if (worksheet.Cells[i, j].Value2 != null)
+            {
+                return worksheet.Cells[i, j].Value2;
+            }
+            else
+            {
+                return "";
+            }
+        }
     }
 }
