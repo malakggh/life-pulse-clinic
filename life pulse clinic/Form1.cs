@@ -16,8 +16,8 @@ namespace life_pulse_clinic
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Excel excel = new Excel(FileName, 1);
-            MessageBox.Show(excel.ReadMyCell(1, 1));
+            //Excel excel = new Excel(FileName, 1);
+            //MessageBox.Show(excel.ReadMyCell(1, 1));
         }
     }
 }

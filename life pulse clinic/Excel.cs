@@ -20,10 +20,10 @@ namespace life_pulse_clinic
             wb = excel.Workbooks.Open(path);
             this.ws = (Worksheet?)wb.Worksheets[Sheet];
         }
-        public string ReadMyCell(int i , int j)
-        {
-            return ws.Cells[i, j].Value;
-        }
+        //public string ReadMyCell(int i , int j)
+        //{
+        //    return ws.Cells[i, j].Value;
+        //}
         //public string ReadCell(int i,int j)
         //{
         //    i++;
