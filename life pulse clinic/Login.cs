@@ -5,6 +5,8 @@ namespace life_pulse_clinic
 {
     public partial class Login : Form
     {
+        private Path proramPath;
+
         public Login()
         {
             InitializeComponent();
@@ -18,7 +20,7 @@ namespace life_pulse_clinic
             //...
             //3.else
             //...
-            if (isUsernameAndPassVaild(userTextBox.Text, passTextBox.Text) == true)
+          if (returnUsernameIndex(userTextBox.Text)==)
             {
                 Form1.doctor = new Doctor(userTextBox.Text, passTextBox.Text);
                 Close();
@@ -30,9 +32,9 @@ namespace life_pulse_clinic
 
         }
 
-        private bool isUsernameAndPassVaild(string username,string password)
+        private int returnUsernameIndex(string username)
         {
-            return true;
+       
         }
 
 
