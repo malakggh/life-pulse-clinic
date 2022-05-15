@@ -3,7 +3,7 @@ namespace life_pulse_clinic
     public partial class Form1 : Form
     {
         public static string projectPath = AppDomain.CurrentDomain.BaseDirectory.Substring(0, AppDomain.CurrentDomain.BaseDirectory.IndexOf("\\bin"));
-        public static string accountsPath = "\\accountsTable1.xlsx";
+        public static string accountsPath = "\\accountsTable.xlsx";
         public static Doctor doctor;
         public Form1()
         {
@@ -36,58 +36,90 @@ namespace life_pulse_clinic
 
         public static int GetUsernameIndex(string username)
         {
-            int index = 0;
             Excel excel = new Excel(Form1.projectPath + Form1.accountsPath, 1);
-
-            while (true)
+            try
             {
-                string str = excel.ReadCell(index, 0);
-                if (str == username)
+                int index = 0;
+                while (true)
                 {
-                    excel.closeXl();
-                    return index;
+                    string str = excel.ReadCell(index, 0);
+                    if (str == username)
+                    {
+                        return index;
+                    }
+                    else if (str == "")
+                    {
+                        return -1;
+                    }
+                    index++;
                 }
-                else if (str == "")
-                {
-                    excel.closeXl();
-                    return -1;
-                }
-                index++;
 
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Error Occured");
+                return -1;
+            }
+            finally
+            {
+                excel.closeXl();
             }
         }
         public static bool IsIdExist(string id)
         {
-            int index = 0;
             Excel excel = new Excel(Form1.projectPath + Form1.accountsPath, 1);
-
-            while (true)
+            try
             {
-                string str = excel.ReadCell(index, 2);
-                if (str == id)
+                int index = 0;
+                while (true)
                 {
-                    excel.closeXl();
-                    return true;
+                    string str = excel.ReadCell(index, 2);
+                    if (str == id)
+                    {
+                        return true;
+                    }
+                    else if (str == "")
+                    {
+                        return false;
+                    }
+                    index++;
                 }
-                else if (str == "")
-                {
-                    excel.closeXl();
-                    return false;
-                }
-                index++;
 
             }
-        }
-        public static bool CheckIsPasswordValid(int userIndex, string password)
-        {
-            Excel excel = new Excel(Form1.projectPath + Form1.accountsPath, 1);
-            if (excel.ReadCell(userIndex,1) == password)
+            catch (Exception)
             {
-                excel.closeXl();
+
+                MessageBox.Show("Error Occured");
                 return true;
             }
-            excel.closeXl();
-            return false;
+            finally
+            {
+                excel.closeXl();
+            }
+        }
+        public static bool IsPasswordMatch(int userIndex, string password)
+        {
+            Excel excel = new Excel(Form1.projectPath + Form1.accountsPath, 1);
+            try
+            {
+                if (excel.ReadCell(userIndex,1) == password)
+                {
+                    return true;
+                }
+                return false;
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Error Occured");
+                return false;
+            }
+            finally
+            {
+                excel.closeXl();
+            }
         }
         public static bool IsUsernameLegal(string username)
         {

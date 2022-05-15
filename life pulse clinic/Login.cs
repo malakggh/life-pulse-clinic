@@ -36,7 +36,7 @@ namespace life_pulse_clinic
                 int userIndex = Form1.GetUsernameIndex(userTextBox.Text);
                 if (userIndex != -1)
                 {
-                    if (Form1.CheckIsPasswordValid(userIndex, passTextBox.Text) == true)
+                    if (Form1.IsPasswordMatch(userIndex, passTextBox.Text) == true)
                     {
                         Form1.doctor=new Doctor(userTextBox.Text, passTextBox.Text);
                         Close();

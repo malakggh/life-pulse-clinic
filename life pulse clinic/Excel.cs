@@ -15,11 +15,13 @@ namespace life_pulse_clinic
         _Excel.Application excel = new _Excel.Application();
         Workbook workbook;
         Worksheet worksheet;
+        _Excel.Range range;
         public Excel(string path,int sheet)
         {
             this.path = path;
             workbook = excel.Workbooks.Open(path);
             worksheet = workbook.Worksheets[sheet];
+            range = worksheet.UsedRange;
         }
         public string ReadCell(int i, int j)
         {
@@ -36,14 +38,15 @@ namespace life_pulse_clinic
         }
         public void WriteLastRow(string username,string password,string id)
         {
-            int index = 0;
+            int index = 1;
             while (ReadCell(index,0)!="")
             {
                 index++;
             }
-            worksheet.Cells[index, 0] = username;
-            worksheet.Cells[index, 1] = password;
-            worksheet.Cells[index, 2] = id;
+            index++;
+            worksheet.Cells[index, 1] = username;
+            worksheet.Cells[index, 2] = password;
+            worksheet.Cells[index, 3] = id;
             excel.Visible = false;
             excel.UserControl = false;
             workbook.Save();
@@ -52,6 +55,7 @@ namespace life_pulse_clinic
         {
             GC.Collect();
             GC.WaitForPendingFinalizers();
+            Marshal.ReleaseComObject(range);
             Marshal.ReleaseComObject(worksheet);
             workbook.Close();
             Marshal.ReleaseComObject(workbook);

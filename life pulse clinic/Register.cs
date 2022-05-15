@@ -20,18 +20,18 @@ namespace life_pulse_clinic
         private void button1_Click(object sender, EventArgs e)
         {
             string msgError = "";
-            if (Form1.IsUsernameLegal(userTextBox.Text) == false)
-            {
-                msgError += "username not legal\n";
-            }
-            if (Form1.IsPasswordLegal (passTextBox.Text) == false)
-            {
-                msgError += "username not legal\n";
-            }
-            if (Form1.IsUsernameLegal(userTextBox.Text) == false)
-            {
-                msgError += "username not legal\n";
-            }
+            //if (Form1.IsUsernameLegal(userTextBox.Text) == false)
+            //{
+            //    msgError += "username not legal\n";
+            //}
+            //if (Form1.IsPasswordLegal (passTextBox.Text) == false)
+            //{
+            //    msgError += "username not legal\n";
+            //}
+            //if (Form1.IsUsernameLegal(userTextBox.Text) == false)
+            //{
+            //    msgError += "username not legal\n";
+            //}
             if (msgError!="")
             {
                 MessageBox.Show(msgError,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
@@ -47,8 +47,21 @@ namespace life_pulse_clinic
                 else
                 {
                     Excel excel = new Excel(Form1.projectPath + Form1.accountsPath, 1);
-                    excel.WriteLastRow(userTextBox.Text, passTextBox.Text, idTextBox.Text);
-                    excel.closeXl();
+                    try
+                    {
+                        excel.WriteLastRow(userTextBox.Text, passTextBox.Text, idTextBox.Text);
+                        MessageBox.Show("Registed successfuly");
+
+                    }
+                    catch (Exception)
+                    {
+
+                        MessageBox.Show("Error Occured");
+                    }
+                    finally
+                    {
+                        excel.closeXl();
+                    }
                 }
             }
         }
