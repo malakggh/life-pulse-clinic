@@ -33,22 +33,31 @@ namespace life_pulse_clinic
             }
             else
             {
-                int userIndex = Form1.GetUsernameIndex(userTextBox.Text);
-                if (userIndex != -1)
+                try
                 {
-                    if (Form1.IsPasswordMatch(userIndex, passTextBox.Text) == true)
+                    int userIndex = Form1.GetUsernameIndex(userTextBox.Text);
+                    if (userIndex != -1)
                     {
-                        Form1.doctor=new Doctor(userTextBox.Text, passTextBox.Text);
-                        Close();
+                        if (Form1.IsPasswordMatch(userIndex, passTextBox.Text) == true)
+                        {
+                            Form1.doctor=new Doctor(userTextBox.Text, passTextBox.Text);
+                            Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("password doesn't match!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("password doesn't match!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("username doesn't exist!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("username doesn't exist!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 

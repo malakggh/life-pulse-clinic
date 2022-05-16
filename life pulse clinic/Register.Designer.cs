@@ -42,6 +42,7 @@
             this.passTextBox.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.passTextBox.Location = new System.Drawing.Point(129, 74);
             this.passTextBox.Name = "passTextBox";
+            this.passTextBox.PasswordChar = '*';
             this.passTextBox.Size = new System.Drawing.Size(289, 32);
             this.passTextBox.TabIndex = 7;
             // 

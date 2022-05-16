@@ -29,7 +29,7 @@ namespace life_pulse_clinic
             j++;
             if (worksheet.Cells[i, j].Value2 != null)
             {
-                return worksheet.Cells[i, j].Value2;
+                return worksheet.Cells[i, j].Value2.ToString();
             }
             else
             {
@@ -39,11 +39,10 @@ namespace life_pulse_clinic
         public void WriteLastRow(string username,string password,string id)
         {
             int index = 1;
-            while (ReadCell(index,0)!="")
+            while (ReadCell(index-1,0)!="")
             {
                 index++;
             }
-            index++;
             worksheet.Cells[index, 1] = username;
             worksheet.Cells[index, 2] = password;
             worksheet.Cells[index, 3] = id;

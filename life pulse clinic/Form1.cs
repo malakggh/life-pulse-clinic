@@ -1,3 +1,4 @@
+using System.Diagnostics;
 namespace life_pulse_clinic
 {
     public partial class Form1 : Form
@@ -57,9 +58,7 @@ namespace life_pulse_clinic
             }
             catch (Exception)
             {
-
-                MessageBox.Show("Error Occured");
-                return -1;
+                throw new Exception("Error Occured While Checking If User Exist");
             }
             finally
             {
@@ -89,9 +88,7 @@ namespace life_pulse_clinic
             }
             catch (Exception)
             {
-
-                MessageBox.Show("Error Occured");
-                return true;
+                throw new Exception("Error Occured While Checking If Id Exist");
             }
             finally
             {
@@ -113,8 +110,7 @@ namespace life_pulse_clinic
             catch (Exception)
             {
 
-                MessageBox.Show("Error Occured");
-                return false;
+                throw new Exception("Error Occured While Checking If Password Match");
             }
             finally
             {
@@ -178,6 +174,22 @@ namespace life_pulse_clinic
                 }
             }
             return true;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            foreach (var process in Process.GetProcessesByName("EXCEL"))
+            {
+                //MessageBox.Show(process.ProcessName);
+                //// Temp is a document which you need to kill.
+                //if (process.MainWindowTitle.Contains("Temp"))
+                process.Kill();
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
