@@ -6,6 +6,8 @@ namespace life_pulse_clinic
         public static string projectPath = AppDomain.CurrentDomain.BaseDirectory.Substring(0, AppDomain.CurrentDomain.BaseDirectory.IndexOf("\\bin"));
         public static string accountsPath = "\\accountsTable.xlsx";
         public static Doctor doctor;
+        public static Patient patient;
+        public static BloodTest bloodTest;
         public Form1()
         {
             InitializeComponent();
@@ -190,6 +192,12 @@ namespace life_pulse_clinic
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            BloodTestPage bloodTestPage = new BloodTestPage();
+            bloodTestPage.Show();
         }
     }
 }
