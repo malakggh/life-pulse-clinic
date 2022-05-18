@@ -19,11 +19,11 @@ namespace life_pulse_clinic
             //3.else
             //... 
             string errorMsg = "";
-            if (Form1.IsUsernameLegal(userTextBox.Text) == false)
+            if (Functions.IsUsernameLegal(userTextBox.Text) == false)
             {
                 errorMsg += "username is not legal\n";
             }
-            if (Form1.IsPasswordLegal(passTextBox.Text) == false)
+            if (Functions.IsPasswordLegal(passTextBox.Text) == false)
             {
                 errorMsg += "password is not legal\n";
             }
@@ -35,10 +35,10 @@ namespace life_pulse_clinic
             {
                 try
                 {
-                    int userIndex = Form1.GetUsernameIndex(userTextBox.Text);
+                    int userIndex = Functions.GetUsernameIndex(userTextBox.Text);
                     if (userIndex != -1)
                     {
-                        if (Form1.IsPasswordMatch(userIndex, passTextBox.Text) == true)
+                        if (Functions.IsPasswordMatch(userIndex, passTextBox.Text) == true)
                         {
                             Form1.doctor=new Doctor(userTextBox.Text, passTextBox.Text);
                             Close();

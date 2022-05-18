@@ -20,15 +20,15 @@ namespace life_pulse_clinic
         private void button1_Click(object sender, EventArgs e)
         {
             string msgError = "";
-            if (Form1.IsUsernameLegal(userTextBox.Text) == false)
+            if (Functions.IsUsernameLegal(userTextBox.Text) == false)
             {
                 msgError += "username not legal\n";
             }
-            if (Form1.IsPasswordLegal(passTextBox.Text) == false)
+            if (Functions.IsPasswordLegal(passTextBox.Text) == false)
             {
                 msgError += "password not legal\n";
             }
-            if (Form1.IsIdLegal(idTextBox.Text) == false)
+            if (Functions.IsIdLegal(idTextBox.Text) == false)
             {
                 msgError += "id not legal\n";
             }
@@ -40,10 +40,10 @@ namespace life_pulse_clinic
             {
                 try
                 {
-                    if (Form1.GetUsernameIndex(userTextBox.Text) != -1)
+                    if (Functions.GetUsernameIndex(userTextBox.Text) != -1)
                     {
                         MessageBox.Show("username already exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }else if (Form1.IsIdExist(idTextBox.Text)==true){
+                    }else if (Functions.IsIdExist(idTextBox.Text)==true){
                         MessageBox.Show("id already exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else

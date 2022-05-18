@@ -36,10 +36,47 @@ namespace life_pulse_clinic
                     {
                         gender = "Male";
                     }
-                    Form1.patient = new Patient(firstNameTextBox.Text, lastNameTextBox.Text
-                        , idTextBox.Text, int.Parse(ageTextBox.Text),gender, cityTextBox.Text, phoneTextBox.Text
-                        , emailTextBox.Text);
-                    Close();    
+                    string errorMsg = "";
+                    if (Functions.IsEmailLegal(emailTextBox.Text)==false)
+                    {
+                        errorMsg += "Email Addess is Not Vaild\n";
+                    }
+                    if (Functions.IsIdLegal(idTextBox.Text)==false)
+                    {
+                        errorMsg += "Id is Not Vaild\n";
+                    }
+                    if (Functions.IsAgeLegal(int.Parse(ageTextBox.Text)) == false)
+                    {
+                        errorMsg += "Age is Not In Range\n";
+                    }
+                    if (Functions.IsPhoneNumberLegal(phoneTextBox.Text) == false)
+                    {
+                        errorMsg += "Phone Number is Not Legal\n";
+                    }
+                    if (firstNameTextBox.TextLength < 3)
+                    {
+                        errorMsg += "First Name is Not Legal\n";
+                    }
+                    if (lastNameTextBox.TextLength < 3)
+                    {
+                        errorMsg += "Last Name is Not Legal\n";
+                    }
+                    if (cityTextBox.TextLength < 3)
+                    {
+                        errorMsg += "City Name is Not Legal\n";
+                    }
+                    if (errorMsg != "")
+                    {
+                        MessageBox.Show(errorMsg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        Form1.patient = new Patient(firstNameTextBox.Text, lastNameTextBox.Text
+                            , idTextBox.Text, int.Parse(ageTextBox.Text),gender, cityTextBox.Text, phoneTextBox.Text
+                            , emailTextBox.Text);
+                        Close();    
+
+                    }
 
                 }
                 catch (Exception ex)
