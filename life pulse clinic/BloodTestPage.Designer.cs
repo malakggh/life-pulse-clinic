@@ -52,6 +52,7 @@
             this.HbTextBox = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.ImportExcelButton = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // OkButton
@@ -73,6 +74,7 @@
             this.WBCTextBox.Name = "WBCTextBox";
             this.WBCTextBox.Size = new System.Drawing.Size(289, 32);
             this.WBCTextBox.TabIndex = 6;
+            this.WBCTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BloodTestPage_KeyPress);
             // 
             // label1
             // 
@@ -91,6 +93,7 @@
             this.LymphTextBox.Name = "LymphTextBox";
             this.LymphTextBox.Size = new System.Drawing.Size(289, 32);
             this.LymphTextBox.TabIndex = 9;
+            this.LymphTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BloodTestPage_KeyPress);
             // 
             // label2
             // 
@@ -109,6 +112,7 @@
             this.NeutTextBox.Name = "NeutTextBox";
             this.NeutTextBox.Size = new System.Drawing.Size(289, 32);
             this.NeutTextBox.TabIndex = 11;
+            this.NeutTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BloodTestPage_KeyPress);
             // 
             // label3
             // 
@@ -127,6 +131,7 @@
             this.HCTTextBox.Name = "HCTTextBox";
             this.HCTTextBox.Size = new System.Drawing.Size(289, 32);
             this.HCTTextBox.TabIndex = 17;
+            this.HCTTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BloodTestPage_KeyPress);
             // 
             // label4
             // 
@@ -145,6 +150,7 @@
             this.UreaTextBox.Name = "UreaTextBox";
             this.UreaTextBox.Size = new System.Drawing.Size(289, 32);
             this.UreaTextBox.TabIndex = 15;
+            this.UreaTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BloodTestPage_KeyPress);
             // 
             // label5
             // 
@@ -163,6 +169,7 @@
             this.RBCTextBox.Name = "RBCTextBox";
             this.RBCTextBox.Size = new System.Drawing.Size(289, 32);
             this.RBCTextBox.TabIndex = 13;
+            this.RBCTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BloodTestPage_KeyPress);
             // 
             // label6
             // 
@@ -181,6 +188,7 @@
             this.APTextBox.Name = "APTextBox";
             this.APTextBox.Size = new System.Drawing.Size(289, 32);
             this.APTextBox.TabIndex = 29;
+            this.APTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BloodTestPage_KeyPress);
             // 
             // label7
             // 
@@ -199,6 +207,7 @@
             this.HDLTextBox.Name = "HDLTextBox";
             this.HDLTextBox.Size = new System.Drawing.Size(289, 32);
             this.HDLTextBox.TabIndex = 25;
+            this.HDLTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BloodTestPage_KeyPress);
             // 
             // label9
             // 
@@ -217,6 +226,7 @@
             this.CrtnTextBox.Name = "CrtnTextBox";
             this.CrtnTextBox.Size = new System.Drawing.Size(289, 32);
             this.CrtnTextBox.TabIndex = 23;
+            this.CrtnTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BloodTestPage_KeyPress);
             // 
             // label10
             // 
@@ -235,6 +245,7 @@
             this.IronTextBox.Name = "IronTextBox";
             this.IronTextBox.Size = new System.Drawing.Size(289, 32);
             this.IronTextBox.TabIndex = 21;
+            this.IronTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BloodTestPage_KeyPress);
             // 
             // label11
             // 
@@ -253,6 +264,7 @@
             this.HbTextBox.Name = "HbTextBox";
             this.HbTextBox.Size = new System.Drawing.Size(289, 32);
             this.HbTextBox.TabIndex = 19;
+            this.HbTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BloodTestPage_KeyPress);
             // 
             // label12
             // 
@@ -274,6 +286,11 @@
             this.ImportExcelButton.TabIndex = 30;
             this.ImportExcelButton.Text = "Import From Excel";
             this.ImportExcelButton.UseVisualStyleBackColor = true;
+            this.ImportExcelButton.Click += new System.EventHandler(this.ImportExcelButton_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // BloodTestPage
             // 
@@ -308,6 +325,7 @@
             this.Name = "BloodTestPage";
             this.Text = "BloodTestPage";
             this.Load += new System.EventHandler(this.BloodTestPage_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BloodTestPage_KeyPress);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -339,5 +357,6 @@
         private TextBox HbTextBox;
         private Label label12;
         private Button ImportExcelButton;
+        private OpenFileDialog openFileDialog1;
     }
 }
