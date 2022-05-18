@@ -59,7 +59,6 @@
             this.okButton.TabIndex = 7;
             this.okButton.Text = "OK";
             this.okButton.UseVisualStyleBackColor = true;
-            this.okButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // firstNameTextBox
             // 
