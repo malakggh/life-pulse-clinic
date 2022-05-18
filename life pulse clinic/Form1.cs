@@ -199,5 +199,11 @@ namespace life_pulse_clinic
             BloodTestPage bloodTestPage = new BloodTestPage();
             bloodTestPage.Show();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            PatientPage patientPage = new PatientPage();
+            patientPage.Show();
+        }
     }
 }

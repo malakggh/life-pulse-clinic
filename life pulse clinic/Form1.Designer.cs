@@ -91,8 +91,9 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(372, 61);
             this.button5.TabIndex = 4;
-            this.button5.Text = "Show Blood Test";
+            this.button5.Text = "Show Patient Page";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // Form1
             // 
