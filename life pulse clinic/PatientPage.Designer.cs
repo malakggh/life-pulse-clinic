@@ -59,6 +59,7 @@
             this.okButton.TabIndex = 7;
             this.okButton.Text = "OK";
             this.okButton.UseVisualStyleBackColor = true;
+            this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
             // firstNameTextBox
             // 
@@ -263,6 +264,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "PatientPage";
             this.Text = "PatientPage";
+            this.Load += new System.EventHandler(this.PatientPage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
