@@ -25,7 +25,7 @@ namespace life_pulse_clinic
                     double.Parse(LymphTextBox.Text), double.Parse(RBCTextBox.Text), double.Parse(HCTTextBox.Text),
                     double.Parse(UreaTextBox.Text), double.Parse(HbTextBox.Text), double.Parse(CrtnTextBox.Text),
                     double.Parse(IronTextBox.Text), double.Parse(HDLTextBox.Text), double.Parse(APTextBox.Text));
-
+                Close();
             }
             catch (Exception ex)
             {
@@ -77,24 +77,71 @@ namespace life_pulse_clinic
             }
             if (path != "")
             {
-
-                Excel excel = new Excel(path, 1);
                 try
                 {
-                    //while ()
-                    //{
-                    // 
-                    //}
+                    Excel excel = new Excel(path, 1);
+                    try
+                    {
+                        bool flag = true;
+                        int i = 0;
+                        while (flag)
+                        {
+                            string cell = excel.ReadCell(0, i);
+                            if (cell.ToLower() == "wbc")
+                            {
+                                WBCTextBox.Text = excel.ReadCell(1, i);
+                            }else if (cell.ToLower() == "neut")
+                            {
+                                NeutTextBox.Text=excel.ReadCell(1, i);
+                            }else if(cell.ToLower() == "lymph")
+                            {
+                                LymphTextBox.Text=excel.ReadCell(1,i);
+                            }else if (cell.ToLower() == "rbc")
+                            {
+                                RBCTextBox.Text=excel.ReadCell(1,i);
+                            }else if(cell.ToLower() == "hct")
+                            {
+                                HCTTextBox.Text = excel.ReadCell(1, i);
+                            }else if(cell.ToLower() == "urea")
+                            {
+                                UreaTextBox.Text = excel.ReadCell(1, i);
+                            }else if(cell.ToLower() == "hb")
+                            {
+                                HbTextBox.Text=excel.ReadCell (1, i);
+                            }else if (cell.ToLower() == "crtn")
+                            {
+                                CrtnTextBox.Text = excel.ReadCell(1, i);
+                            }else if (cell.ToLower() == "iron")
+                            {
+                                IronTextBox.Text = excel.ReadCell(1, i);
+                            }else if (cell.ToLower() == "hdl")
+                            {
+                                HDLTextBox.Text=excel.ReadCell(1, i);
+                            }else if (cell.ToLower() == "ap")
+                            {
+                                APTextBox.Text = excel.ReadCell(1, i);
+                            }else if(cell == "")
+                            {
+                                flag = false;
+                            }
+                            i++;
+                        }
+
+                    }
+                    catch (Exception)
+                    {
+
+                        MessageBox.Show("Error Occured While Reading File", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        excel.closeXl();
+                    }
 
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-
-                    MessageBox.Show("Error Occured While Checking If Password Match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                finally
-                {
-                    excel.closeXl();
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 

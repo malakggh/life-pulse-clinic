@@ -18,10 +18,17 @@ namespace life_pulse_clinic
         _Excel.Range range;
         public Excel(string path,int sheet)
         {
-            this.path = path;
-            workbook = excel.Workbooks.Open(path);
-            worksheet = workbook.Worksheets[sheet];
-            range = worksheet.UsedRange;
+            try
+            {
+                this.path = path;
+                workbook = excel.Workbooks.Open(path);
+                worksheet = workbook.Worksheets[sheet];
+                range = worksheet.UsedRange;
+            }
+            catch (Exception)
+            {
+                throw new Exception("Error Occured While Opening File\n");
+            }
         }
         public string ReadCell(int i, int j)
         {
