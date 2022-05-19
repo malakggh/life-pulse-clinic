@@ -6,22 +6,23 @@ using System.Threading.Tasks;
 
 namespace life_pulse_clinic
 {
-    public class WBC : BloodTestX
+    public class Hb : BloodTestX
     {
-        public WBC(double value) : base(value)
+        public Hb(double value) : base(value)
         {
         }
 
         public override string GetStatus()
         {
-            int age = Form1.patient.GetAge();
             //double value = GetValue();
-            if (age >= 0 && age <= 3)
+            if (Form1.patient.GetAge() >=0 && Form1.patient.GetAge() <=17)
             {
-                //if (value < 6000)
+                return GetRes(11.5, 15.5);
+                //if (value < 11.5)
                 //{
                 //    return "Low";
-                //}else if (value > 17500)
+                //}
+                //else if (value > 15.5)
                 //{
                 //    return "High";
                 //}
@@ -29,30 +30,15 @@ namespace life_pulse_clinic
                 //{
                 //    return "Normal";
                 //}
-                return GetRes(6000, 17500);
-            }else if(age >= 4 && age <= 17)
-            {
-                //if (value < 5500)
-                //{
-                //    return "Low";
-                //}
-                //else if (value > 15500)
-                //{
-                //    return "High";
-                //}
-                //else
-                //{
-                //    return "Normal";
-                //}
-                return GetRes(5500, 15500);
             }
-            else if(age >= 18)
+            if (Form1.patient.GetGender()=="Female")
             {
-                //if (value < 4500)
+                return GetRes(12, 16);
+                //if (value < 12)
                 //{
                 //    return "Low";
                 //}
-                //else if (value > 11000)
+                //else if (value > 16)
                 //{
                 //    return "High";
                 //}
@@ -60,9 +46,22 @@ namespace life_pulse_clinic
                 //{
                 //    return "Normal";
                 //}
-                return GetRes(4500, 11000);
+            }else
+            {
+                return GetRes(12, 18);
+                //if (value < 12)
+                //{
+                //    return "Low";
+                //}
+                //else if (value > 18)
+                //{
+                //    return "High";
+                //}
+                //else
+                //{
+                //    return "Normal";
+                //}
             }
-            throw new Exception("Age Out of Range");
         }
     }
 }

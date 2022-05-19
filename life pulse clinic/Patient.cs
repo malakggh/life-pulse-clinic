@@ -29,5 +29,7 @@ namespace life_pulse_clinic
             this.email = email;
         }
         public int GetAge() { return age; }
+        
+        public string GetGender() { return gender;}
     }
 }

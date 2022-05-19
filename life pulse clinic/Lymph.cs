@@ -6,24 +6,24 @@ using System.Threading.Tasks;
 
 namespace life_pulse_clinic
 {
-    internal class Neut : BloodTestX
+    public class Lymph : BloodTestX
     {
-        private WBC wbc; 
-        public Neut(double value,WBC wbc) : base(value)
+        private WBC wbc;
+        public Lymph(double value,WBC wbc) : base(value)
         {
-            this.wbc = wbc;
+            this.wbc =wbc;
         }
 
         public override string GetStatus()
         {
             double WBCValue = wbc.GetValue();
-            //double NeutValue = GetValue();
-            return GetRes(WBCValue*0.28, WBCValue*54);
-            //if (NeutValue < WBCValue * 0.28) 
+            //double LymphValue = GetValue();
+            return GetRes(WBCValue * 0.36, WBCValue * 0.52);
+            //if (LymphValue < WBCValue * 0.36)
             //{
             //    return "Low";
             //}
-            //else if (NeutValue > WBCValue * 0.54)
+            //else if (LymphValue > WBCValue * 0.52)
             //{
             //    return "High";
             //}

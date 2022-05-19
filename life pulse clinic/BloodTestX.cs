@@ -14,5 +14,21 @@ namespace life_pulse_clinic
         public abstract string GetStatus();
 
         public double GetValue() { return value; }
+
+        protected string GetRes(double low,double high)
+        {
+            if (value < low)
+            {
+                return "Low";
+            }
+            else if (value > high)
+            {
+                return "High";
+            }
+            else
+            {
+                return "Normal";
+            }
+        }
     }
 }
