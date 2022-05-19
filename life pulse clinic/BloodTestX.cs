@@ -12,5 +12,7 @@ namespace life_pulse_clinic
 
         protected BloodTestX(double value) { this.value = value; }
         public abstract string GetStatus();
+
+        public double GetValue() { return value; }
     }
 }
