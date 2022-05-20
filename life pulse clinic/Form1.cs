@@ -66,5 +66,11 @@ namespace life_pulse_clinic
             PatientPage patientPage = new PatientPage();
             patientPage.Show();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            QuestionsPage questionsPage = new QuestionsPage();  
+            questionsPage.Show();
+        }
     }
 }
