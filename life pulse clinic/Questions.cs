@@ -9,13 +9,20 @@ namespace life_pulse_clinic
     public class Questions
     {
         private bool ethiopian;
-        private bool easter;
+        private bool eastern;
         private bool smoker;
-        public Questions (bool ethiopian,bool easter,bool smoker)
+        private bool fever;
+        public Questions (bool ethiopian,bool eastern,bool smoker,bool fever)
         {
             this.ethiopian = ethiopian;  
-            this.easter = easter;
+            this.eastern = eastern;
             this.smoker = smoker;
+            this.fever = fever;
         }
+
+        public bool GetEthiopian() { return ethiopian; }
+        public bool GetEastern() { return eastern; }
+        public bool GetSmoker() { return smoker; }
+        public bool GetFever() { return fever; }
     }
 }

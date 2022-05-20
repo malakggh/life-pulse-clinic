@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace life_pulse_clinic
 {
     public class WBC : BloodTestX
     {
+        
         public WBC(double value) : base(value)
         {
         }
@@ -27,6 +29,35 @@ namespace life_pulse_clinic
                 return GetRes(4500, 11000);
             }
             throw new Exception("Age Out of Range");
+        }
+
+        public override ArrayList GetDisease()
+        {
+            diseases = new ArrayList();
+            if (GetStatus()=="High")
+            {
+                if (Form1.questions.GetFever())
+                {
+                    diseases.Add("זיהום");
+                }
+                else
+                {
+                    diseases.Add("מחלת דם");
+                    diseases.Add("סרטן");
+                }
+                return diseases;
+            }
+            else if(GetStatus()=="Low")
+            {
+                diseases.Add("מחלה ויראלית");
+                diseases.Add("כשל של מערכת החיסון");
+                diseases.Add("במקרים נדירים ביותר על סרטן");
+                return diseases;
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }

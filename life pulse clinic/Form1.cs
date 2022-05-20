@@ -8,6 +8,7 @@ namespace life_pulse_clinic
         public static Doctor doctor;
         public static Patient patient;
         public static BloodTest bloodTest;
+        public static Questions questions;
         public Form1()
         {
             InitializeComponent();

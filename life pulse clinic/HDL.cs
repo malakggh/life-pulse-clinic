@@ -14,7 +14,7 @@ namespace life_pulse_clinic
 
         public override string GetStatus()
         {
-            bool questionIsEthiopain=false;
+            bool questionIsEthiopain = Form1.questions.GetEthiopian();
             if (questionIsEthiopain==false)
             {
                 if (Form1.patient.GetGender()=="Male")

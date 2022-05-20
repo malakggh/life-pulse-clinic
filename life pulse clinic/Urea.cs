@@ -15,14 +15,14 @@ namespace life_pulse_clinic
 
         public override string GetStatus()
         {
-             bool questionIsEastern=true;
+            bool questionIsEastern = Form1.questions.GetEastern();
             if (questionIsEastern == false)
             {
                 return GetRes(17, 43);
             }
             else
             {
-                return GetRes(17, 43 * 1.1);
+                return GetRes(17*1.1, 43 * 1.1);
 
             }
 

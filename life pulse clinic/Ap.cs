@@ -14,7 +14,7 @@ namespace life_pulse_clinic
 
         public override string GetStatus()
         {
-            bool questionIsEthiopain = false;
+            bool questionIsEthiopain = Form1.questions.GetEthiopian();
             if (questionIsEthiopain == false)
             {
                 return GetRes(30, 90);
