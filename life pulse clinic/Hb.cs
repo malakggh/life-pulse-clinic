@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace life_pulse_clinic
         {
         }
 
+
         public override string GetStatus()
         {
             if (Form1.patient.GetAge() >=0 && Form1.patient.GetAge() <=17)
@@ -24,6 +26,22 @@ namespace life_pulse_clinic
             }else
             {
                 return GetRes(12, 18);
+            }
+        }
+        public override ArrayList GetDisease()
+        {
+            diseases = new ArrayList();
+            if (GetStatus() == "Low")
+            {
+                diseases.Add("אנמיה");
+                diseases.Add("הפרעה המטולוגית");
+                diseases.Add("מחסור בברזל");
+                diseases.Add("דימום");
+                return diseases;
+            }
+            else
+            {
+                return null;
             }
         }
     }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,7 @@ namespace life_pulse_clinic
         public Crtn(double value) : base(value)
         {
         }
+
 
         public override string GetStatus()
         {
@@ -29,6 +31,27 @@ namespace life_pulse_clinic
             else
             {
                 return GetRes(0.6,1.2);
+            }
+        }
+        public override ArrayList GetDisease()
+        {
+            diseases = new ArrayList();
+            if(GetStatus() == "High")
+            {
+                diseases.Add("מחלת כליה");
+                diseases.Add("מחלות שריר");
+                diseases.Add("צריכה מוגברת של בשר");
+                return diseases;
+            }
+            else if(GetStatus() == "Low")
+            {
+                diseases.Add("מחלות שריר");
+                diseases.Add("תת תזונה");
+                return diseases;
+            }
+            else
+            {
+                return null;
             }
         }
     }

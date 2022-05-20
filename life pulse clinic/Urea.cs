@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,7 @@ namespace life_pulse_clinic
         {
         }
 
+
         public override string GetStatus()
         {
             bool questionIsEastern = Form1.questions.GetEastern();
@@ -26,6 +28,35 @@ namespace life_pulse_clinic
 
             }
 
+        }
+        public override ArrayList GetDisease()
+        {
+            diseases = new ArrayList();
+            if(GetStatus() == "High")
+            {
+                diseases.Add("מחלת כליה");
+                diseases.Add("התייבשות");
+                diseases.Add("דיאטה");
+                return diseases;
+            }
+            else if(GetStatus() == "Low")
+            {
+                if(Form1.patient.GetGender() == "Female" && Form1.questions.Getpregnant()) 
+                {
+                    return null;
+                }
+                else
+                {
+                    diseases.Add("תת תזונה");
+                    diseases.Add("דיאטה");
+                    diseases.Add("מחלת כבד");
+                    return diseases;
+                }
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }

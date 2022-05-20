@@ -19,7 +19,7 @@ namespace life_pulse_clinic
 
         private void okButton_Click(object sender, EventArgs e)
         {
-            bool isEastern=false,isEthiopian=false,isSmoker=false,hasFever=false;
+            bool isEastern=false,isEthiopian=false,isSmoker=false,hasFever=false,isPregnant=false;
             if (easternRadioButton.Checked)
                 isEastern = true;
             if (ethiopianRadioButton.Checked)
@@ -28,7 +28,9 @@ namespace life_pulse_clinic
                 isSmoker = true;
             if(feverRadioButton.Checked)
                 hasFever = true;
-            Form1.questions=new Questions(isEthiopian,isEastern,isSmoker,hasFever);
+            if(pregnentRadioButton.Checked)
+                isPregnant = true;
+            Form1.questions=new Questions(isEthiopian,isEastern,isSmoker,hasFever,isPregnant);
             Close();
         }
     }
