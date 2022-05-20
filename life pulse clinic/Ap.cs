@@ -6,21 +6,22 @@ using System.Threading.Tasks;
 
 namespace life_pulse_clinic
 {
-    public class Iron : BloodTestX
+    public class Ap : BloodTestX
     {
-        public Iron(double value) : base(value)
+        public Ap(double value) : base(value)
         {
         }
 
         public override string GetStatus()
         {
-            if (Form1.patient.GetGender()=="Female")
+            bool questionIsEthiopain = false;
+            if (questionIsEthiopain == false)
             {
-                return GetRes(60*0.8,160*0.8);
+                return GetRes(30, 90);
             }
             else
             {
-                return GetRes(60,160);
+                return GetRes(60, 120);
             }
         }
     }

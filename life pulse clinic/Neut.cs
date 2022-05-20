@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace life_pulse_clinic
 {
-    internal class Neut : BloodTestX
+    public class Neut : BloodTestX
     {
         private WBC wbc; 
         public Neut(double value,WBC wbc) : base(value)
@@ -17,20 +17,7 @@ namespace life_pulse_clinic
         public override string GetStatus()
         {
             double WBCValue = wbc.GetValue();
-            //double NeutValue = GetValue();
-            return GetRes(WBCValue*0.28, WBCValue*54);
-            //if (NeutValue < WBCValue * 0.28) 
-            //{
-            //    return "Low";
-            //}
-            //else if (NeutValue > WBCValue * 0.54)
-            //{
-            //    return "High";
-            //}
-            //else
-            //{
-            //    return "Normal";
-            //}
+            return GetRes(WBCValue*0.28, WBCValue*0.54);
         }
     }
 }

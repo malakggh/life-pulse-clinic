@@ -8,14 +8,13 @@ namespace life_pulse_clinic
 {
     public class HDL : BloodTestX
     {
-        private bool questionIsEthiopain;
         public HDL(double value) : base(value)
         {
-            this.questionIsEthiopain = false;
         }
 
         public override string GetStatus()
         {
+            bool questionIsEthiopain=false;
             if (questionIsEthiopain==false)
             {
                 if (Form1.patient.GetGender()=="Male")
@@ -31,11 +30,11 @@ namespace life_pulse_clinic
             {
                 if (Form1.patient.GetGender() == "Male")
                 {
-                    return GetRes(29, 62*1.2);
+                    return GetRes(29*1.2, 62*1.2);
                 }
                 else
                 {
-                    return GetRes(34, 82*1.2);
+                    return GetRes(34*1.2, 82*1.2);
                 }
             }
         }
