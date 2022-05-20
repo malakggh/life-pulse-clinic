@@ -16,5 +16,10 @@ namespace life_pulse_clinic
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
