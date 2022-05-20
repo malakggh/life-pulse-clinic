@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,7 @@ namespace life_pulse_clinic
         public HDL(double value) : base(value)
         {
         }
+
 
         public override string GetStatus()
         {
@@ -36,6 +38,24 @@ namespace life_pulse_clinic
                 {
                     return GetRes(34*1.2, 82*1.2);
                 }
+            }
+        }
+        public override ArrayList GetDisease()
+        {
+            diseases = new ArrayList();
+            if (GetStatus()=="Low")
+            {
+                diseases.Add("מחלות לב");
+                diseases.Add("היפרליפידמיה )שומנים בדם(");
+                if (Form1.patient.GetAge()>=18)
+                {
+                    diseases.Add("סוכרת מבוגרים");
+                }
+                return diseases;
+            }
+            else
+            {
+                return null;
             }
         }
     }
