@@ -16,23 +16,34 @@ namespace life_pulse_clinic
             this.arr = new BloodTestX[11];
             arr[0] = new WBC(WBC);
             arr[1] = new Neut(Neut,(WBC)arr[0]);
-            this.lymph = new Lymph(Lymph,this.wbc);
-            this.rbc = new RBC(RBC);
-            this.hct = new HCT(HCT,this.rbc);
-            this.urea = new Urea(Urea);
-            this.hb = new Hb(Hb);
-            this.crtn = new Crtn(Crtn);
-            this.iron = new Iron(Iron);
-            this.hdl = new HDL(HDL);
-            this.ap = new Ap(Ap);
+            arr[2] = new Lymph(Lymph,(WBC)arr[0]);
+            arr[3] = new RBC(RBC);
+            arr[4] = new HCT(HCT, (RBC)arr[3]);
+            arr[5] = new Urea(Urea);
+            arr[6] = new Hb(Hb);
+            arr[7] = new Crtn(Crtn);
+            arr[8] = new Iron(Iron);
+            arr[9] = new HDL(HDL);
+            arr[10] = new Ap(Ap);
         }
-
-        public WBC GetWBC() { return this.wbc; }
-
         public ArrayList GetDisease()
         {
-            ArrayList arr = wbc.GetDisease();
-            ArrayList arr2 = neut.GetDisease();
+            ArrayList result=new ArrayList();
+            for(int i = 0; i < arr.Length; i++)
+            {
+                ArrayList helpArr = arr[i].GetDisease(); 
+                if(helpArr != null)
+                {
+                    foreach(string item in helpArr)
+                    {
+                        if (!(result.Contains(item)))
+                        {
+                            result.Add(item);
+                        }
+                    }
+                }
+            }
+            return result;
         }
     }
 }

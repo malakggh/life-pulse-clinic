@@ -41,9 +41,7 @@ namespace life_pulse_clinic
             listView1.Columns.Add(header2);
 
 
-            ListViewItem item = new ListViewItem("tepoooooool");
-            item.SubItems.Add("m7laaaaaaaaaa");
-            listView1.Items.Add(item);
+            
 
             addResultsToListView();
         }
@@ -52,12 +50,14 @@ namespace life_pulse_clinic
         {
             Form1.patient = new Patient("dsa", "dsa", "2321", 20, "Male", "dsad", "321312", "dsai@dsa.com");
             Form1.questions = new Questions(false, false, false, false, false);
-            ArrayList arr  = Form1.bloodTest.GetWBC().GetDisease();
+            ArrayList arr  = Form1.bloodTest.GetDisease();
             if (arr!=null)
             {
                 foreach (string item in arr)
                 {
-                    MessageBox.Show(item);
+                    ListViewItem listItem = new ListViewItem(Functions.GetRecommendation(item));
+                    listItem.SubItems.Add(item);
+                    listView1.Items.Add(listItem);
                 }
             }
         }
