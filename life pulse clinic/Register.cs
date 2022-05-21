@@ -12,9 +12,12 @@ namespace life_pulse_clinic
 {
     public partial class Register : Form
     {
-        public Register()
+        private Form1 form1;
+        private bool isRegisterd = false;
+        public Register(Form1 form1)
         {
             InitializeComponent();
+            this.form1 = form1;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -53,6 +56,9 @@ namespace life_pulse_clinic
                         {
                             excel.WriteLastRow(userTextBox.Text, passTextBox.Text, idTextBox.Text);
                             Form1.doctor = new Doctor(userTextBox.Text, passTextBox.Text);
+                            form1.Opacity = 1;
+                            form1.Focus();
+                            isRegisterd = true;
                             Close();
 
                         }
@@ -73,6 +79,15 @@ namespace life_pulse_clinic
 
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void Register_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (isRegisterd == false)
+            {
+                Environment.Exit(0);
+
             }
         }
     }

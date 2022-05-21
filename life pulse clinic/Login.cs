@@ -4,11 +4,12 @@ namespace life_pulse_clinic
 {
     public partial class Login : Form
     {
-
-        public Login()
+        private Form1 form1;
+        private bool isRegisterClicked = false;
+        public Login(Form1 form1)
         {
             InitializeComponent();
-       
+            this.form1 = form1;
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -27,9 +28,9 @@ namespace life_pulse_clinic
             {
                 errorMsg += "password is not legal\n";
             }
-            if (errorMsg!="")
+            if (errorMsg != "")
             {
-                MessageBox.Show(errorMsg,"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(errorMsg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -40,7 +41,10 @@ namespace life_pulse_clinic
                     {
                         if (Functions.IsPasswordMatch(userIndex, passTextBox.Text) == true)
                         {
-                            Form1.doctor=new Doctor(userTextBox.Text, passTextBox.Text);
+                            Form1.doctor = new Doctor(userTextBox.Text, passTextBox.Text);
+                            form1.Opacity = 1;
+                            form1.Focus();
+                            isRegisterClicked = true;
                             Close();
                         }
                         else
@@ -65,9 +69,19 @@ namespace life_pulse_clinic
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Register register = new Register();
+            isRegisterClicked = true;
+            Register register = new Register(form1);
             register.Show();
             Close();
+        }
+
+        private void Login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (isRegisterClicked == false)
+            {
+                Environment.Exit(0);
+
+            }
         }
     }
 }

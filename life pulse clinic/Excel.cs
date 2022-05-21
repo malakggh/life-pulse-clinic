@@ -30,6 +30,13 @@ namespace life_pulse_clinic
                 throw new Exception("Error Occured While Opening File\n");
             }
         }
+        public static _Excel.Application MakeNewExcel(string path)
+        {
+            _Excel.Application excel1 = new _Excel.Application();
+            Workbook workbook1 = excel1.Workbooks.Add(Type.Missing);
+            workbook1.SaveCopyAs(path);
+            return excel1;
+        }
         public string ReadCell(int i, int j)
         {
             i++;
@@ -55,6 +62,18 @@ namespace life_pulse_clinic
             worksheet.Cells[index, 3] = id;
             excel.Visible = false;
             excel.UserControl = false;
+            workbook.Save();
+        }
+        public void WriteCell(int i, int j,string value)
+        {
+            i++;
+            j++;
+            excel.Visible = false;
+            excel.UserControl = false;
+            worksheet.Cells[i, j] = value;
+        }
+        public void SaveWork()
+        {
             workbook.Save();
         }
         public void closeXl()

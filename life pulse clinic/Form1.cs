@@ -16,9 +16,11 @@ namespace life_pulse_clinic
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Login login = new Login();
+            doctor = null;
+            Login login = new Login(this);
             login.Show();
-            
+            this.Opacity = 0;
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -53,30 +55,36 @@ namespace life_pulse_clinic
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            Login login = new Login(this);
+            login.Show();
+            this.Opacity = 0;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            BloodTestPage bloodTestPage = new BloodTestPage();
+            BloodTestPage bloodTestPage = new BloodTestPage(this);
+            this.Hide();
             bloodTestPage.Show();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            PatientPage patientPage = new PatientPage();
+            PatientPage patientPage = new PatientPage(this);
+            this.Hide();
             patientPage.Show();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            QuestionsPage questionsPage = new QuestionsPage();  
+            QuestionsPage questionsPage = new QuestionsPage(this);
+            this.Hide();
             questionsPage.Show();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            ResultPage resultPage = new ResultPage();
+            ResultPage resultPage = new ResultPage(this);
+            this.Hide();
             resultPage.Show();
         }
     }

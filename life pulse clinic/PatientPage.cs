@@ -12,9 +12,11 @@ namespace life_pulse_clinic
 {
     public partial class PatientPage : Form
     {
-        public PatientPage()
+        private Form1 form1; 
+        public PatientPage(Form1 form1)
         {
             InitializeComponent();
+            this.form1 = form1;
         }
 
 
@@ -74,6 +76,7 @@ namespace life_pulse_clinic
                         Form1.patient = new Patient(firstNameTextBox.Text, lastNameTextBox.Text
                             , idTextBox.Text, int.Parse(ageTextBox.Text),gender, cityTextBox.Text, phoneTextBox.Text
                             , emailTextBox.Text);
+                        form1.Show();
                         Close();    
 
                     }
@@ -106,6 +109,11 @@ namespace life_pulse_clinic
         private void PatientPage_Load(object sender, EventArgs e)
         {
             maleButton.Checked = true;
+        }
+
+        private void PatientPage_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            form1.Show();
         }
     }
 }

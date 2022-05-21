@@ -28,8 +28,16 @@ namespace life_pulse_clinic
             this.phone = phone;
             this.email = email;
         }
+        public string GetFirstName() { return firstName; }
+        public string GetLastName() { return lastName; }
+        public string GetId() { return id; }
+
         public int GetAge() { return age; }
         
         public string GetGender() { return gender;}
+        public string GetCity() { return city;}
+        public string GetPhone() { return phone;}
+        public string GetEmail() { return email;}
+        
     }
 }

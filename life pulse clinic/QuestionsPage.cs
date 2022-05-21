@@ -12,9 +12,11 @@ namespace life_pulse_clinic
 {
     public partial class QuestionsPage : Form
     {
-        public QuestionsPage()
+        private Form1 form1;
+        public QuestionsPage(Form1 form1)
         {
             InitializeComponent();
+            this.form1 = form1;
         }
 
         private void okButton_Click(object sender, EventArgs e)
@@ -31,7 +33,14 @@ namespace life_pulse_clinic
             if(pregnentRadioButton.Checked)
                 isPregnant = true;
             Form1.questions=new Questions(isEthiopian,isEastern,isSmoker,hasFever,isPregnant);
+            form1.Show();
             Close();
+
+        }
+
+        private void QuestionsPage_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            form1.Show();
         }
     }
 }   

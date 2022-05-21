@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections;
 
 namespace life_pulse_clinic
 {
@@ -11,12 +6,12 @@ namespace life_pulse_clinic
     {
         private BloodTestX[] arr;
 
-        public BloodTest(double WBC,double Neut,double Lymph,double RBC,double HCT,double Urea, double Hb, double Crtn, double Iron, double HDL, double Ap)
+        public BloodTest(double WBC, double Neut, double Lymph, double RBC, double HCT, double Urea, double Hb, double Crtn, double Iron, double HDL, double Ap)
         {
             this.arr = new BloodTestX[11];
             arr[0] = new WBC(WBC);
-            arr[1] = new Neut(Neut,(WBC)arr[0]);
-            arr[2] = new Lymph(Lymph,(WBC)arr[0]);
+            arr[1] = new Neut(Neut, (WBC)arr[0]);
+            arr[2] = new Lymph(Lymph, (WBC)arr[0]);
             arr[3] = new RBC(RBC);
             arr[4] = new HCT(HCT, (RBC)arr[3]);
             arr[5] = new Urea(Urea);
@@ -28,13 +23,13 @@ namespace life_pulse_clinic
         }
         public ArrayList GetDisease()
         {
-            ArrayList result=new ArrayList();
-            for(int i = 0; i < arr.Length; i++)
+            ArrayList result = new ArrayList();
+            for (int i = 0; i < arr.Length; i++)
             {
-                ArrayList helpArr = arr[i].GetDisease(); 
-                if(helpArr != null)
+                ArrayList helpArr = arr[i].GetDisease();
+                if (helpArr != null)
                 {
-                    foreach(string item in helpArr)
+                    foreach (string item in helpArr)
                     {
                         if (!(result.Contains(item)))
                         {
@@ -42,6 +37,16 @@ namespace life_pulse_clinic
                         }
                     }
                 }
+            }
+            return result;
+        }
+        public string[] GetNameValue()
+        {
+            string[] result = new string[22];
+            for (int i = 0;i < arr.Length; i++)
+            {
+                result[i]=arr[i].GetType().Name;
+                result[i + 11] = arr[i].GetValue().ToString();
             }
             return result;
         }

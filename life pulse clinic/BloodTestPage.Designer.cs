@@ -324,6 +324,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "BloodTestPage";
             this.Text = "BloodTestPage";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BloodTestPage_FormClosing);
             this.Load += new System.EventHandler(this.BloodTestPage_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BloodTestPage_KeyPress);
             this.ResumeLayout(false);

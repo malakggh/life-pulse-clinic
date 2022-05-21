@@ -32,7 +32,7 @@ namespace life_pulse_clinic
             {
                 diseases.Add("הפרעה ביצירת הדם / תאי דם");
                 diseases.Add("זיהום");
-                diseases.Add("במקרים נדירים ביותר על סרטן");
+                diseases.Add("סרטן");
                 return diseases;
             }
             else

@@ -51,7 +51,7 @@ namespace life_pulse_clinic
             {
                 diseases.Add("מחלה ויראלית");
                 diseases.Add("כשל של מערכת החיסון");
-                diseases.Add("במקרים נדירים ביותר על סרטן");
+                diseases.Add("סרטן");
                 return diseases;
             }
             else

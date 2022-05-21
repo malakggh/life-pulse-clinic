@@ -12,9 +12,11 @@ namespace life_pulse_clinic
 {
     public partial class BloodTestPage : Form
     {
-        public BloodTestPage()
+        private Form1 form1;
+        public BloodTestPage(Form1 form1)
         {
             InitializeComponent();
+            this.form1 = form1;
         }
 
         private void OkButton_Click(object sender, EventArgs e)
@@ -25,6 +27,7 @@ namespace life_pulse_clinic
                     double.Parse(LymphTextBox.Text), double.Parse(RBCTextBox.Text), double.Parse(HCTTextBox.Text),
                     double.Parse(UreaTextBox.Text), double.Parse(HbTextBox.Text), double.Parse(CrtnTextBox.Text),
                     double.Parse(IronTextBox.Text), double.Parse(HDLTextBox.Text), double.Parse(APTextBox.Text));
+                form1.Show();
                 Close();
             }
             catch (Exception ex)
@@ -145,6 +148,11 @@ namespace life_pulse_clinic
                 }
             }
 
+        }
+
+        private void BloodTestPage_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            form1.Show();
         }
     }
 }
