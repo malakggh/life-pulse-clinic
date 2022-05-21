@@ -73,5 +73,11 @@ namespace life_pulse_clinic
             QuestionsPage questionsPage = new QuestionsPage();  
             questionsPage.Show();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            ResultPage resultPage = new ResultPage();
+            resultPage.Show();
+        }
     }
 }
