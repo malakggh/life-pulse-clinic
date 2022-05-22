@@ -28,6 +28,7 @@ namespace life_pulse_clinic
                     double.Parse(UreaTextBox.Text), double.Parse(HbTextBox.Text), double.Parse(CrtnTextBox.Text),
                     double.Parse(IronTextBox.Text), double.Parse(HDLTextBox.Text), double.Parse(APTextBox.Text));
                 form1.Show();
+                form1.Focus();
                 Close();
             }
             catch (Exception ex)
@@ -153,6 +154,7 @@ namespace life_pulse_clinic
         private void BloodTestPage_FormClosing(object sender, FormClosingEventArgs e)
         {
             form1.Show();
+            form1.Focus();
         }
     }
 }

@@ -70,6 +70,7 @@ namespace life_pulse_clinic
         private void ResultPage_FormClosing(object sender, FormClosingEventArgs e)
         {
             form1.Show();
+            form1.Focus();
         }
 
         private void ExportButton_Click(object sender, EventArgs e)
@@ -171,6 +172,7 @@ namespace life_pulse_clinic
             Form1.bloodTest = null;
             Form1.questions = null;
             form1.Show();
+            form1.Focus();
             Close();
         }
     }

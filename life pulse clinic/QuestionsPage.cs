@@ -34,6 +34,7 @@ namespace life_pulse_clinic
                 isPregnant = true;
             Form1.questions=new Questions(isEthiopian,isEastern,isSmoker,hasFever,isPregnant);
             form1.Show();
+            form1.Focus();
             Close();
 
         }
@@ -41,6 +42,7 @@ namespace life_pulse_clinic
         private void QuestionsPage_FormClosing(object sender, FormClosingEventArgs e)
         {
             form1.Show();
+            form1.Focus();
         }
     }
 }   

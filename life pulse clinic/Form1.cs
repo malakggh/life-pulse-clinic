@@ -22,24 +22,6 @@ namespace life_pulse_clinic
             this.Opacity = 0;
 
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            //MessageBox.Show(IsPasswordLeagel("12356dxxqd").ToString());
-            //Excel excel = new Excel(Form1.projectPath + Form1.accountsPath, 1);
-            //MessageBox.Show(excel.ReadCell(0,0));
-            //MessageBox.Show(excel.ReadCell(1, 0));
-            //excel.closeXl();
-            if (doctor != null)
-            {
-                MessageBox.Show(doctor.Username());
-            }
-            else
-            {
-                MessageBox.Show("error!");
-            }
-        }
-
         
 
         private void button3_Click(object sender, EventArgs e)
@@ -86,6 +68,49 @@ namespace life_pulse_clinic
             ResultPage resultPage = new ResultPage(this);
             this.Hide();
             resultPage.Show();
+        }
+
+        private void Form1_Activated(object sender, EventArgs e)
+        {
+            doctorLabel.Text = "Welcome ";
+            if (doctor != null)
+            {
+                doctorLabel.Text += doctor.Username();
+            }
+            HandleButtons();
+        }
+
+        private void HandleButtons()
+        {
+            if (doctor == null)
+            {
+                ButtonsState();
+            }
+            else
+            {
+                if (patient == null)
+                {
+                    ButtonsState(true);
+                }
+                else if (questions == null)
+                {
+                    ButtonsState(false, true);
+                } else if (bloodTest == null)
+                {
+                    ButtonsState(false, false, true);
+                } else if (bloodTest != null && questions != null && patient != null)
+                {
+                    ButtonsState(false,false,false,true);
+                }
+            }
+        }
+
+        private void ButtonsState(bool pat=false,bool ques=false, bool blood=false, bool res=false)
+        {
+            patientButton.Enabled = pat;
+            questionButton.Enabled = ques;
+            bloodTestButton.Enabled = blood;
+            resultsButton.Enabled = res;
         }
     }
 }

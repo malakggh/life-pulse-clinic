@@ -77,6 +77,7 @@ namespace life_pulse_clinic
                             , idTextBox.Text, int.Parse(ageTextBox.Text),gender, cityTextBox.Text, phoneTextBox.Text
                             , emailTextBox.Text);
                         form1.Show();
+                        form1.Focus();
                         Close();    
 
                     }
@@ -114,6 +115,7 @@ namespace life_pulse_clinic
         private void PatientPage_FormClosing(object sender, FormClosingEventArgs e)
         {
             form1.Show();
+            form1.Focus();
         }
     }
 }
