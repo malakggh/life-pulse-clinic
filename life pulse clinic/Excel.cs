@@ -80,12 +80,12 @@ namespace life_pulse_clinic
         {
             GC.Collect();
             GC.WaitForPendingFinalizers();
-            Marshal.ReleaseComObject(range);
-            Marshal.ReleaseComObject(worksheet);
+            Marshal.FinalReleaseComObject(range);
+            Marshal.FinalReleaseComObject(worksheet);
             workbook.Close();
-            Marshal.ReleaseComObject(workbook);
+            Marshal.FinalReleaseComObject(workbook);
             excel.Quit();
-            Marshal.ReleaseComObject(excel);
+            Marshal.FinalReleaseComObject(excel);
         }
     }
 }
