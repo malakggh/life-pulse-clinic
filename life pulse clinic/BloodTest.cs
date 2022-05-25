@@ -50,6 +50,16 @@ namespace life_pulse_clinic
             }
             return result;
         }
+
+        public void GetStatus()
+        {
+            string message = "";
+            foreach (BloodTestX item in arr)
+            {
+                message += item.GetType().Name + " - " + item.GetStatus();
+            }
+            MessageBox.Show(message);
+        }
     }
 }
 
