@@ -22,11 +22,11 @@ namespace life_pulse_clinic
             string errorMsg = "";
             if (Functions.IsUsernameLegal(userTextBox.Text) == false)
             {
-                errorMsg += "username is not legal\n";
+                errorMsg += "Username is not legal\n";
             }
             if (Functions.IsPasswordLegal(passTextBox.Text) == false)
             {
-                errorMsg += "password is not legal\n";
+                errorMsg += "Password is not legal\n";
             }
             if (errorMsg != "")
             {
