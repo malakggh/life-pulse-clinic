@@ -83,5 +83,10 @@ namespace life_pulse_clinic
 
             }
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            Form1.DesignIt(this);
+        }
     }
 }

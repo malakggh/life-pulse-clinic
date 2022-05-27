@@ -110,6 +110,7 @@ namespace life_pulse_clinic
         private void PatientPage_Load(object sender, EventArgs e)
         {
             maleButton.Checked = true;
+            Form1.DesignIt(this);
         }
 
         private void PatientPage_FormClosing(object sender, FormClosingEventArgs e)

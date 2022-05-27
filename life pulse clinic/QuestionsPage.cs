@@ -21,18 +21,18 @@ namespace life_pulse_clinic
 
         private void okButton_Click(object sender, EventArgs e)
         {
-            bool isEastern=false,isEthiopian=false,isSmoker=false,hasFever=false,isPregnant=false;
+            bool isEastern = false, isEthiopian = false, isSmoker = false, hasFever = false, isPregnant = false;
             if (easternRadioButton.Checked)
                 isEastern = true;
             if (ethiopianRadioButton.Checked)
                 isEthiopian = true;
             if (smokerRadioButton.Checked)
                 isSmoker = true;
-            if(feverRadioButton.Checked)
+            if (feverRadioButton.Checked)
                 hasFever = true;
-            if(pregnentRadioButton.Checked)
+            if (pregnentRadioButton.Checked)
                 isPregnant = true;
-            Form1.questions=new Questions(isEthiopian,isEastern,isSmoker,hasFever,isPregnant);
+            Form1.questions = new Questions(isEthiopian, isEastern, isSmoker, hasFever, isPregnant);
             form1.Show();
             form1.Focus();
             Close();
@@ -43,6 +43,11 @@ namespace life_pulse_clinic
         {
             form1.Show();
             form1.Focus();
+        }
+
+        private void QuestionsPage_Load(object sender, EventArgs e)
+        {
+            Form1.DesignIt(this);
         }
     }
 }   

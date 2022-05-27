@@ -1,4 +1,5 @@
 using System.Diagnostics;
+
 namespace life_pulse_clinic
 {
     public partial class Form1 : Form
@@ -9,11 +10,63 @@ namespace life_pulse_clinic
         public static Patient patient;
         public static BloodTest bloodTest;
         public static Questions questions;
+        //Colors
+        public static Color backColor = Color.FromArgb(255, 245, 252);
+        public static Color secondColor = Color.FromArgb(130, 81, 145);
         public Form1()
         {
             InitializeComponent();
         }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Login login = new Login(this);
+            login.Show();
+            this.Opacity = 0;
+            DateTime utcDate = DateTime.UtcNow;
+            dateLabel.Text = utcDate.Date.ToShortDateString();
+            DesignIt(this);
+            label1.ForeColor = Color.DarkRed;
+        }
+        private void Form1_Activated(object sender, EventArgs e)
+        {
+            doctorLabel.Text = "Welcome ";
+            if (doctor != null)
+            {
+                doctorLabel.Text += doctor.Username();
+            }
+            HandleButtons();
+            DesignIt(this);
+        }
+        public static void DesignIt(Form form)
+        {
+            form.BackColor = backColor ;
+            form.ForeColor = Color.White;
+            foreach (Control control in form.Controls)
+            {
+                if (control is Button)
+                {
+                    ((Button)control).BackColor = secondColor;
+                    ((Button)control).ForeColor = Color.White;
+                    ((Button)control).FlatAppearance.BorderColor = Color.FromArgb(194, 162, 203);
+                    ((Button)control).FlatAppearance.BorderSize = 4;
+                }
+                if (control is Label)
+                {
+                    ((Label)control).ForeColor = Color.Black;
+                }
+                if (control is TextBox)
+                {
+                    ((TextBox)control).BackColor = Color.White;
+                    ((TextBox)control).ForeColor = Color.Black;
+                    ((TextBox)control).BorderStyle = BorderStyle.Fixed3D;
+                }
+                if (control is RadioButton)
+                {
+                    ((RadioButton)control).ForeColor = Color.Black;
+                }
+            }
 
+            }
         private void button1_Click(object sender, EventArgs e)
         {
             doctor = null;
@@ -24,23 +77,6 @@ namespace life_pulse_clinic
         }
         
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            foreach (var process in Process.GetProcessesByName("EXCEL"))
-            {
-                //MessageBox.Show(process.ProcessName);
-                //// Temp is a document which you need to kill.
-                //if (process.MainWindowTitle.Contains("Temp"))
-                process.Kill();
-            }
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            Login login = new Login(this);
-            login.Show();
-            this.Opacity = 0;
-        }
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -70,15 +106,6 @@ namespace life_pulse_clinic
             resultPage.Show();
         }
 
-        private void Form1_Activated(object sender, EventArgs e)
-        {
-            doctorLabel.Text = "Welcome ";
-            if (doctor != null)
-            {
-                doctorLabel.Text += doctor.Username();
-            }
-            HandleButtons();
-        }
 
         private void HandleButtons()
         {
@@ -111,6 +138,14 @@ namespace life_pulse_clinic
             questionButton.Enabled = ques;
             bloodTestButton.Enabled = blood;
             resultsButton.Enabled = res;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            foreach (var process in Process.GetProcessesByName("EXCEL"))
+            {
+                process.Kill();
+            }
         }
     }
 }

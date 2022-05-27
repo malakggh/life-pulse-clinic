@@ -52,9 +52,9 @@
             // 
             this.okButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.okButton.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.okButton.Location = new System.Drawing.Point(9, 172);
+            this.okButton.Location = new System.Drawing.Point(9, 350);
             this.okButton.Name = "okButton";
-            this.okButton.Size = new System.Drawing.Size(843, 43);
+            this.okButton.Size = new System.Drawing.Size(996, 43);
             this.okButton.TabIndex = 7;
             this.okButton.Text = "OK";
             this.okButton.UseVisualStyleBackColor = true;
@@ -65,7 +65,7 @@
             this.firstNameTextBox.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.firstNameTextBox.Location = new System.Drawing.Point(130, 12);
             this.firstNameTextBox.Name = "firstNameTextBox";
-            this.firstNameTextBox.Size = new System.Drawing.Size(289, 32);
+            this.firstNameTextBox.Size = new System.Drawing.Size(365, 32);
             this.firstNameTextBox.TabIndex = 6;
             // 
             // label1
@@ -81,16 +81,16 @@
             // lastNameTextBox
             // 
             this.lastNameTextBox.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lastNameTextBox.Location = new System.Drawing.Point(130, 51);
+            this.lastNameTextBox.Location = new System.Drawing.Point(640, 12);
             this.lastNameTextBox.Name = "lastNameTextBox";
-            this.lastNameTextBox.Size = new System.Drawing.Size(289, 32);
+            this.lastNameTextBox.Size = new System.Drawing.Size(365, 32);
             this.lastNameTextBox.TabIndex = 9;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(9, 51);
+            this.label2.Location = new System.Drawing.Point(519, 12);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(115, 24);
             this.label2.TabIndex = 8;
@@ -99,16 +99,16 @@
             // idTextBox
             // 
             this.idTextBox.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.idTextBox.Location = new System.Drawing.Point(130, 89);
+            this.idTextBox.Location = new System.Drawing.Point(130, 85);
             this.idTextBox.Name = "idTextBox";
-            this.idTextBox.Size = new System.Drawing.Size(289, 32);
+            this.idTextBox.Size = new System.Drawing.Size(365, 32);
             this.idTextBox.TabIndex = 11;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(9, 89);
+            this.label3.Location = new System.Drawing.Point(9, 85);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 24);
             this.label3.TabIndex = 10;
@@ -117,16 +117,16 @@
             // emailTextBox
             // 
             this.emailTextBox.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.emailTextBox.Location = new System.Drawing.Point(555, 107);
+            this.emailTextBox.Location = new System.Drawing.Point(130, 266);
             this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(289, 32);
+            this.emailTextBox.Size = new System.Drawing.Size(365, 32);
             this.emailTextBox.TabIndex = 13;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(435, 107);
+            this.label4.Location = new System.Drawing.Point(10, 266);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 24);
             this.label4.TabIndex = 12;
@@ -136,7 +136,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(435, 10);
+            this.label5.Location = new System.Drawing.Point(520, 266);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 24);
             this.label5.TabIndex = 14;
@@ -145,16 +145,16 @@
             // cityTextBox
             // 
             this.cityTextBox.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.cityTextBox.Location = new System.Drawing.Point(555, 42);
+            this.cityTextBox.Location = new System.Drawing.Point(130, 168);
             this.cityTextBox.Name = "cityTextBox";
-            this.cityTextBox.Size = new System.Drawing.Size(289, 32);
+            this.cityTextBox.Size = new System.Drawing.Size(365, 32);
             this.cityTextBox.TabIndex = 17;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(435, 42);
+            this.label6.Location = new System.Drawing.Point(10, 168);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(54, 24);
             this.label6.TabIndex = 16;
@@ -163,16 +163,16 @@
             // phoneTextBox
             // 
             this.phoneTextBox.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.phoneTextBox.Location = new System.Drawing.Point(555, 74);
+            this.phoneTextBox.Location = new System.Drawing.Point(640, 168);
             this.phoneTextBox.Name = "phoneTextBox";
-            this.phoneTextBox.Size = new System.Drawing.Size(289, 32);
+            this.phoneTextBox.Size = new System.Drawing.Size(365, 32);
             this.phoneTextBox.TabIndex = 19;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(435, 74);
+            this.label7.Location = new System.Drawing.Point(520, 168);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(74, 24);
             this.label7.TabIndex = 18;
@@ -181,16 +181,16 @@
             // ageTextBox
             // 
             this.ageTextBox.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ageTextBox.Location = new System.Drawing.Point(130, 130);
+            this.ageTextBox.Location = new System.Drawing.Point(640, 85);
             this.ageTextBox.Name = "ageTextBox";
-            this.ageTextBox.Size = new System.Drawing.Size(289, 32);
+            this.ageTextBox.Size = new System.Drawing.Size(365, 32);
             this.ageTextBox.TabIndex = 21;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(9, 130);
+            this.label8.Location = new System.Drawing.Point(519, 85);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 24);
             this.label8.TabIndex = 20;
@@ -200,11 +200,11 @@
             // 
             this.femaleButton.AutoSize = true;
             this.femaleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.femaleButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.femaleButton.Location = new System.Drawing.Point(620, 10);
-            this.femaleButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.femaleButton.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.femaleButton.Location = new System.Drawing.Point(685, 263);
+            this.femaleButton.Margin = new System.Windows.Forms.Padding(2);
             this.femaleButton.Name = "femaleButton";
-            this.femaleButton.Size = new System.Drawing.Size(75, 23);
+            this.femaleButton.Size = new System.Drawing.Size(88, 27);
             this.femaleButton.TabIndex = 22;
             this.femaleButton.TabStop = true;
             this.femaleButton.Text = "Female";
@@ -214,11 +214,11 @@
             // 
             this.maleButton.AutoSize = true;
             this.maleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.maleButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.maleButton.Location = new System.Drawing.Point(744, 12);
-            this.maleButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.maleButton.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.maleButton.Location = new System.Drawing.Point(850, 263);
+            this.maleButton.Margin = new System.Windows.Forms.Padding(2);
             this.maleButton.Name = "maleButton";
-            this.maleButton.Size = new System.Drawing.Size(62, 23);
+            this.maleButton.Size = new System.Drawing.Size(70, 27);
             this.maleButton.TabIndex = 23;
             this.maleButton.TabStop = true;
             this.maleButton.Text = "Male";
@@ -228,7 +228,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(861, 228);
+            this.ClientSize = new System.Drawing.Size(1022, 410);
             this.Controls.Add(this.maleButton);
             this.Controls.Add(this.femaleButton);
             this.Controls.Add(this.ageTextBox);
@@ -248,7 +248,7 @@
             this.Controls.Add(this.firstNameTextBox);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PatientPage";
             this.Text = "PatientPage";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PatientPage_FormClosing);

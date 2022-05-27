@@ -52,6 +52,7 @@ namespace life_pulse_clinic
             openFileDialog1.InitialDirectory = @"C:\";
             openFileDialog1.RestoreDirectory = true;
             openFileDialog1.Title = "Browse Excel File";
+            Form1.DesignIt(this);
         }
 
         private void BloodTestPage_KeyPress(object sender, KeyPressEventArgs e)

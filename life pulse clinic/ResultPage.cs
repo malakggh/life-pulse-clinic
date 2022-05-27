@@ -44,11 +44,8 @@ namespace life_pulse_clinic
             // Add the headers to the ListView control.
             listView1.Columns.Add(header1);
             listView1.Columns.Add(header2);
-
-
-            
-
             addResultsToListView();
+            Form1.DesignIt(this);
         }
 
         private void addResultsToListView()
