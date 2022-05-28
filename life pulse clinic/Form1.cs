@@ -23,14 +23,15 @@ namespace life_pulse_clinic
         {
             //QuestionsPage questionsPage = new QuestionsPage(this);
             //questionsPage.Show();
-            Login login = new Login(this);
-            login.Show();
-            this.Opacity = 0;
+            //Login login = new Login(this);
+            //login.Show();
+            //this.Opacity = 0;
             DateTime utcDate = DateTime.UtcNow;
             dateLabel.Text = utcDate.Date.ToShortDateString();
             DesignIt(this);
             label1.ForeColor = Color.DarkRed;
             label4.ForeColor = secondColor;
+            pictureBox1.Image = Image.FromFile(Form1.projectPath+@"\health_professionals2.png");
         }
         private void Form1_Activated(object sender, EventArgs e)
         {
@@ -161,5 +162,7 @@ namespace life_pulse_clinic
                 process.Kill();
             }
         }
+
+   
     }
 }
