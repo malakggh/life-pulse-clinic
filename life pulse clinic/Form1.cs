@@ -11,21 +11,19 @@ namespace life_pulse_clinic
         public static BloodTest bloodTest;
         public static Questions questions;
         //Colors
-        public static Color backColor = Color.FromArgb(230, 230, 232);//(247, 247, 249);
-        public static Color secondColor = Color.FromArgb(114, 78, 87);//(114, 78, 87);//(57, 68, 125);
-        public static Color thirdColor = Color.FromArgb(194, 162, 203);
-        public static Color writingColor = Color.FromArgb(114, 78, 87);
+        public static Color backColor = Color.FromArgb(235, 249, 247);//(247, 247, 249);
+        public static Color secondColor = Color.FromArgb(37, 150, 132);//(114, 78, 87);//(57, 68, 125);
+        public static Color thirdColor = Color.FromArgb(55, 183, 163);
+        public static Color writingColor = Color.DarkSlateGray;
         public Form1()
         {
             InitializeComponent();
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            //QuestionsPage questionsPage = new QuestionsPage(this);
-            //questionsPage.Show();
-            //Login login = new Login(this);
-            //login.Show();
-            //this.Opacity = 0;
+            Login login = new Login(this);
+            login.Show();
+            this.Opacity = 0;
             DateTime utcDate = DateTime.UtcNow;
             dateLabel.Text = utcDate.Date.ToShortDateString();
             DesignIt(this);
@@ -42,7 +40,7 @@ namespace life_pulse_clinic
             }
             HandleButtons();
             DesignIt(this);
-            label1.ForeColor = Color.DarkRed;
+            label1.ForeColor = Color.Green;
             label4.ForeColor = secondColor;
         }
         public static void DesignIt(Form form)
@@ -56,7 +54,7 @@ namespace life_pulse_clinic
                     ((Button)control).BackColor = secondColor;
                     ((Button)control).ForeColor = Color.White;
                     ((Button)control).FlatAppearance.BorderColor = thirdColor;
-                    ((Button)control).FlatAppearance.BorderSize = 1;
+                    ((Button)control).FlatAppearance.BorderSize = 3;
                 }
                 if (control is Label)
                 {
