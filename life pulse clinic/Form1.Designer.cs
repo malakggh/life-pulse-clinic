@@ -36,6 +36,7 @@
             this.doctorLabel = new System.Windows.Forms.Label();
             this.dateLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -54,7 +55,7 @@
             // 
             this.bloodTestButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bloodTestButton.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.bloodTestButton.Location = new System.Drawing.Point(120, 315);
+            this.bloodTestButton.Location = new System.Drawing.Point(122, 358);
             this.bloodTestButton.Name = "bloodTestButton";
             this.bloodTestButton.Size = new System.Drawing.Size(372, 61);
             this.bloodTestButton.TabIndex = 3;
@@ -66,7 +67,7 @@
             // 
             this.patientButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.patientButton.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.patientButton.Location = new System.Drawing.Point(120, 156);
+            this.patientButton.Location = new System.Drawing.Point(122, 199);
             this.patientButton.Name = "patientButton";
             this.patientButton.Size = new System.Drawing.Size(372, 61);
             this.patientButton.TabIndex = 4;
@@ -78,7 +79,7 @@
             // 
             this.questionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.questionButton.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.questionButton.Location = new System.Drawing.Point(611, 156);
+            this.questionButton.Location = new System.Drawing.Point(613, 199);
             this.questionButton.Name = "questionButton";
             this.questionButton.Size = new System.Drawing.Size(372, 61);
             this.questionButton.TabIndex = 5;
@@ -90,7 +91,7 @@
             // 
             this.resultsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.resultsButton.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.resultsButton.Location = new System.Drawing.Point(611, 315);
+            this.resultsButton.Location = new System.Drawing.Point(613, 358);
             this.resultsButton.Name = "resultsButton";
             this.resultsButton.Size = new System.Drawing.Size(372, 61);
             this.resultsButton.TabIndex = 6;
@@ -102,7 +103,7 @@
             // 
             this.doctorLabel.AutoSize = true;
             this.doctorLabel.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.doctorLabel.Location = new System.Drawing.Point(12, 37);
+            this.doctorLabel.Location = new System.Drawing.Point(12, 97);
             this.doctorLabel.Name = "doctorLabel";
             this.doctorLabel.Size = new System.Drawing.Size(163, 31);
             this.doctorLabel.TabIndex = 7;
@@ -129,11 +130,22 @@
             this.label1.Text = "Force Excel to Exit";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Rage Italic", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(12, 24);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(254, 44);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Life Pulse Clinic";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1101, 645);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.dateLabel);
             this.Controls.Add(this.doctorLabel);
             this.Controls.Add(this.label1);
@@ -162,5 +174,6 @@
         private Label doctorLabel;
         private Label dateLabel;
         private Label label1;
+        private Label label4;
     }
 }

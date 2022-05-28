@@ -69,10 +69,7 @@ namespace life_pulse_clinic
 
         private void button1_Click(object sender, EventArgs e)
         {
-            isRegisterClicked = true;
-            Register register = new Register(form1);
-            register.Show();
-            Close();
+           
         }
 
         private void Login_FormClosing(object sender, FormClosingEventArgs e)
@@ -87,6 +84,16 @@ namespace life_pulse_clinic
         private void Login_Load(object sender, EventArgs e)
         {
             Form1.DesignIt(this);
+            label4.ForeColor = Form1.secondColor;
+            label3.ForeColor = Form1.writingColor;
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            isRegisterClicked = true;
+            Register register = new Register(form1);
+            register.Show();
+            Close();
         }
     }
 }

@@ -94,6 +94,7 @@ namespace life_pulse_clinic
         private void Register_Load(object sender, EventArgs e)
         {
             Form1.DesignIt(this);
+            label4.ForeColor = Form1.secondColor;
         }
     }
 }

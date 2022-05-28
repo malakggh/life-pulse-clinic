@@ -22,16 +22,17 @@ namespace life_pulse_clinic
         private void okButton_Click(object sender, EventArgs e)
         {
             bool isEastern = false, isEthiopian = false, isSmoker = false, hasFever = false, isPregnant = false;
-            if (easternRadioButton.Checked)
+            if (comboBox1.SelectedIndex == 0)
                 isEastern = true;
-            if (ethiopianRadioButton.Checked)
+            if (comboBox1.SelectedIndex == 1)
                 isEthiopian = true;
-            if (smokerRadioButton.Checked)
+            if (comboBox2.SelectedIndex == 0)
                 isSmoker = true;
-            if (feverRadioButton.Checked)
+            if (comboBox3.SelectedIndex == 0)
                 hasFever = true;
-            if (pregnentRadioButton.Checked)
+            if (comboBox4.SelectedIndex == 0)
                 isPregnant = true;
+            //MessageBox.Show(isEthiopian + " " + isEastern + " " + isSmoker + " " + hasFever + " " + isPregnant);
             Form1.questions = new Questions(isEthiopian, isEastern, isSmoker, hasFever, isPregnant);
             form1.Show();
             form1.Focus();
@@ -47,6 +48,13 @@ namespace life_pulse_clinic
 
         private void QuestionsPage_Load(object sender, EventArgs e)
         {
+            foreach(Control control in this.Controls)
+            {
+                if (control is ComboBox)
+                {
+                    ((ComboBox)control).SelectedIndex = 0;
+                }
+            }
             Form1.DesignIt(this);
         }
     }

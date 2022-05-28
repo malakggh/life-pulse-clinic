@@ -35,7 +35,8 @@
             // 
             // listView1
             // 
-            this.listView1.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listView1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.listView1.Location = new System.Drawing.Point(12, 44);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(1203, 523);
